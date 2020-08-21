@@ -1,0 +1,21 @@
+<agm-map [zoom]="7" [latitude]="8" [longitude]="81">
+    <agm-marker *ngFor="let cord of cords" [latitude]="cord.data().lat" [longitude]="cord.data().lng"></agm-marker>
+  </agm-map>
+  <mat-form-field class="w-100">
+  <input matInput type="text"  #violation></mat-form-field>
+  <button mat-raised-button color="primary"(click)="map(violation.value)">click</button>
+ <div> {{count}}</div>
+ 
+  <mat-form-field class="w-100"> <input matInput type="text"  #licenseNo></mat-form-field>
+  <mat-form-field class="w-100"><input matInput type="text"  #name></mat-form-field>
+  <mat-form-field class="w-100"><input matInput type="text"  #type></mat-form-field>
+  <mat-form-field class="w-100"><input matInput type="text"  #nic></mat-form-field>
+  <mat-form-field class="w-100"> <input matInput type="text"  #oldRec></mat-form-field>
+
+<button mat-raised-button color="primary"(click)="add(licenseNo.value,name.value,type.value,nic.value,oldRec.value)">Add</button>
+<mat-form-field class="w-100"> <input matInput type="text"  #license_No></mat-form-field>
+<button mat-raised-button color="primary"(click)="get(license_No.value)">Get</button>
+<div *ngFor="let product of products">
+  {{product.data().nic}}
+</div>
+<input type="file" (change)="select($event)">
